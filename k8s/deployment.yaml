@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: app
+  name: flask-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: app
+      app: flask-app
   template:
     metadata:
       labels:
-        app: app
+        app: flask-app
     spec:
       containers:
-        - name: app
-          image: corentinl5/flask-app:latest
+        - name: flask-app
+          image: corentinl5/flask-app
           imagePullPolicy: Always
           ports:
-            - containerPort: 80
+            - containerPort: 5000
